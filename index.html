@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UPS‑Style Tracking — ParcelTrack Replica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo-link">
+        <img src="images/logo.svg" alt="UPS Logo" class="logo-img">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#">Tracking</a>
+        <a href="#">Shipping</a>
+        <a href="#">Locations</a>
+        <a href="#">Support</a>
+        <a href="#">Sign In</a>
+      </nav>
+    </div>
+  </header>
+  <!-- New image section -->
+<section class="after-header-img">
+  <img src="images/new one.avif" alt="New One Image">
+</section>
+
+
+  <main class="main-content">
+    <section class="track-hero">
+      <div class="hero-inner">
+        <h1>Track a package</h1>
+        <p class="hero-sub">Enter your tracking number to view the latest status and delivery updates.</p>
+        <form id="trackForm" class="track-form" onsubmit="return false;">
+          <input id="trackingInput" class="tracking-input" type="text" placeholder="Track number (e.g. 1Z999AA10123456784)" aria-label="Tracking number">
+          <button id="trackBtn" class="track-btn">Track</button>
+        </form>
+        <div id="errorMsg" class="error-message" role="status" aria-live="polite"></div>
+        <div class="hero-note"> <h1> We are now partnering with PRIME CARGO LOGISTICS LIMITED</h1> You can track up to 25 shipments at once (comma-separated).</div>
+        
+      </div>
+    </section>
+
+    <section id="resultSection" class="track-result" style="display:none;">
+      <div class="result-top">
+        <div class="summary-left">
+          <div class="status-row">
+            <span class="label">Status</span>
+            <span id="statusText" class="status-text">—</span>
+          </div>
+          <div class="info-grid">
+            <div><span class="label">Tracking #</span><div id="trackingNumber" class="muted">—</div></div>
+            <div><span class="label">Origin</span><div id="origin" class="muted">—</div></div>
+            <div><span class="label">Destination</span><div id="destination" class="muted">—</div></div>
+            <div><span class="label">Weight</span><div id="weight" class="muted">—</div></div>
+            <div><span class="label">Service</span><div id="service" class="muted">—</div></div>
+            <div><span class="label">Est. Delivery</span><div id="estDelivery" class="muted">—</div></div>
+          </div>
+        </div>
+        <div class="summary-right">
+          <div class="map-card">
+            <!-- 🚚 Truck Route + Progress -->
+<div class="route-section">
+  <h3>Package Route Simulation</h3>
+  <div class="route">
+    <div class="route-line"></div>
+    <div class="truck"></div>
+  </div>
+
+  <!-- Progress Bar with Icons -->
+  <div class="progress-wrapper">
+    <div class="progress-icons">
+      <div class="icon-step"><span><i class="fas fa-box"></i></span><p>In Transit</p></div>
+      <div class="icon-step"><span><i class="fas fa-truck"></i></span><p>Out for Delivery</p></div>
+      <div class="icon-step"><span><i class="fas fa-home"></i></span><p>Delivered</p></div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Status Text -->
+  <p id="routeStatusText">PACKAGING IN PROGRESS...</p>
+</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-and-events">
+        <div class="timeline-panel">
+          <div class="timeline-header">
+            <h3>Tracking history</h3>
+            <button id="toggleDetails" class="toggle-btn">View Details</button>
+          </div>
+          <ul id="eventsList" class="events-list collapsed" aria-live="polite">
+            <!-- events inserted here -->
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small>UPS GLOBAL SHIPPING AND LOGISTICS.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

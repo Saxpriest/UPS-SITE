@@ -1,0 +1,185 @@
+:root{
+  --brown:#4b2e13;
+  --gold:#ffb900;
+  --muted:#666;
+  --bg:#f4f4f6;
+  --card:#ffffff;
+  --accent:#e6b14b;
+  --blue:#105497;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--brown);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+.site-header{background:var(--card);border-bottom:1px solid #e6e6e6}
+.header-inner{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo-img{height:40px;width:auto;display:block}
+.main-nav a{margin-left:18px;color:var(--gold);font-size:14px;font-weight: bold;
+}
+.main-nav a:hover{color:var(--brown)}
+
+.track-hero{background:var(--card);padding:36px 20px;text-align:center;margin:18px auto;max-width:1100px;border-radius:8px;box-shadow:0 6px 18px rgba(30,30,30,0.04)}
+.hero-inner h1{font-size:28px;margin-bottom:6px}
+.hero-sub{color:var(--muted);margin-bottom:16px}
+.track-form{display:flex;max-width:640px;margin:0 auto;gap:8px}
+.tracking-input{flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:6px;font-size:16px}
+.track-btn{background:var(--brown);color:white;padding:12px 18px;border:none;border-radius:6px;cursor:pointer;font-weight:600}
+.error-message{color:#b00020;margin-top:8px}
+.hero-note{margin-top:10px;color:var(--muted);font-size:13px}
+
+.track-result{max-width:1100px;margin:18px auto;padding:0 20px 30px;background:var(--card);border-radius:8px;box-shadow:0 6px 18px rgba(30,30,30,0.04)}
+.result-top{display:flex;gap:20px;padding:22px;border-bottom:1px solid #f0f0f0}
+.summary-left{flex:1}
+.status-row{display:flex;align-items:center;color:var(--blue);gap:12px;margin-bottom:10px}
+.status-row .label{font-weight:700;color:var(--muted);font-size:13px}
+.status-text{font-size:20px;font-weight:700;color:var(--brown)}
+
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.label{font-weight:700;color:var(--muted);font-size:12px}
+.muted{color:var(--muted);margin-top:6px}
+
+.summary-right{width:320px}
+.map-card{background:#fafafa;padding:10px;border-radius:8px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.map-img{width:100%;border-radius:6px;display:block;height:160px;object-fit:cover}
+.map-caption{font-size:12px;color:var(--muted)}
+
+/* timeline */
+.timeline-and-events{padding:18px}
+.timeline-panel{background:transparent;border-radius:6px}
+.timeline-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.toggle-btn{background:none;border:0;color:var(--brown);cursor:pointer;font-weight:700}
+.events-list{list-style:none;padding:0;margin:0;border-top:1px solid #f0f0f0}
+.events-list.collapsed{display:none}
+.events-list li{padding:14px 0;border-bottom:1px solid #f7f7f7;display:flex;gap:12px;align-items:flex-start}
+.event-dot{width:13px;height:13px;background:var(--accent);border-radius:50%;margin-top:6px}
+.event-body{flex:1}
+.event-time{font-size:13px;color:var(--muted);margin-bottom:6px}
+.event-status{font-weight:700;margin-bottom:6px}
+.event-location{font-size:13px;color:var(--muted)}
+
+/* footer */
+.site-footer{margin-top:30px;background:var(--card);padding:18px;border-top:1px solid #eee;text-align:center}
+.footer-inner small{color:var(--muted)}
+
+/* responsive */
+@media (max-width:900px){
+  .result-top{flex-direction:column}
+  .summary-right{width:100%}
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .track-form{flex-direction:column}
+  .tracking-input{width:100%}
+  .track-btn{width:100%}
+  .info-grid{grid-template-columns:1fr}
+}
+.after-header-img {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.after-header-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* ==== Truck Route Simulation ==== */
+.route-section {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.route {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.route-line {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  width: 300px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 4px;
+  transform: rotate(-20deg);
+  transform-origin: left bottom;
+}
+
+.truck {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url('images/truck.png') no-repeat center/contain;
+  top: 125px;
+  left: 20px;
+  animation: moveTruck 6s linear;
+  animation-play-state: paused;
+}
+
+@keyframes moveTruck {
+  from { transform: translateX(0) translateY(0) rotate(-20deg); }
+  to   { transform: translateX(280px) translateY(-100px) rotate(-20deg); }
+}
+
+/* ==== Progress Bar + Icons ==== */
+.progress-wrapper {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.progress-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.icon-step {
+  text-align: center;
+  flex: 1;
+}
+
+.icon-step span {
+  display: block;
+  font-size: 2rem;
+  color: #999;
+}
+
+.icon-step p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 4px;
+  color: #3d2b1f;
+}
+
+.progress-container {
+  width: 100%;
+  height: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  border: 1px solid #d4d4d4;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #ffc72c;
+  transition: width 2s linear;
+}
+
+#routeStatusText {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #3d2b1f;
+  font-size: 1.1em;
+}
+

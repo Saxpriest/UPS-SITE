@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const statuses = ['Picked up✅','Origin scan✅','In transit✅','Out for delivery','MOVING PACKAGE 🚚'];
     const now = new Date();
     const events = [];
-    const locs = ['Washington✅, DC','SCAN CONFIRMED FOR LINDSEY PALMER','YOUR PACKAGE IS ON THE MOVE!','IN ROUTE','IN ROUTE'];
+    const locs = ['Washington✅, DC','SCAN CONFIRMED FOR LINDSEY PALMER','YOUR PACKAGE IS ON THE MOVE!','AT CUSTOM CHECK','IN ROUTE'];
     for(let i=0;i<5;i++){
       const d = new Date(now.getTime() - (4-i)*12*3600*1000);
       events.push({

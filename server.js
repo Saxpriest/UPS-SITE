@@ -18,7 +18,7 @@ app.get('/api/track/:tn', (req, res) => {
   }
   const seed = pseudoHash(tn);
   const idx = seed % 5;
-  const statuses = ['Picked up','Origin scan','In transit','Out for delivery','Delivered'];
+  const statuses = ['Picked up','Origin scan','In transit','Out for delivery','IN-ROUTE'];
   const now = Date.now();
   const events = [];
   const locs = ['Los Angeles, CA','Phoenix, AZ','Dallas, TX','Atlanta, GA','Newark, NJ'];

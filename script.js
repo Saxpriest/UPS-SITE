@@ -78,10 +78,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // stable pseudo-random based on tracking string
     let seed = 0; for(let i=0;i<tn.length;i++) seed = (seed*131 + tn.charCodeAt(i)) % 10007;
     const idx = seed % 5;
-    const statuses = ['Picked up✅','Origin scan✅','In transit✅','Out for delivery','MOVING PACKAGE 🚚'];
+    const statuses = ['Picked up✅','Origin scan✅','HELD FOR CUSTOM INSPECTION','Out for delivery','MOVING PACKAGE 🚚'];
     const now = new Date();
     const events = [];
-    const locs = ['Washington✅, DC','SCAN CONFIRMED FOR LINDSEY PALMER','YOUR PACKAGE IS ON THE MOVE!','AT CUSTOM CHECK','IN ROUTE'];
+    const locs = ['Washington✅, DC','SCAN CONFIRMED FOR LINDSEY PALMER','AT CUSTOMS CHECK','IN ROUTE','IN ROUTE'];
     for(let i=0;i<5;i++){
       const d = new Date(now.getTime() - (4-i)*12*3600*1000);
       events.push({

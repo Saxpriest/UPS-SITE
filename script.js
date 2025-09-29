@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // stable pseudo-random based on tracking string
     let seed = 0; for(let i=0;i<tn.length;i++) seed = (seed*131 + tn.charCodeAt(i)) % 10007;
     const idx = seed % 5;
-    const statuses = ['Picked up✅','Origin scan✅','In transit✅','Out for delivery','Deliver'];
+    const statuses = ['Picked up✅','Origin scan✅','In transit✅','Out for delivery','MOVING PACKAGE 🚚'];
     const now = new Date();
     const events = [];
     const locs = ['Washington✅, DC','SCAN CONFIRMED FOR LINDSEY PALMER','YOUR PACKAGE IS ON THE MOVE!','IN ROUTE','IN ROUTE'];
